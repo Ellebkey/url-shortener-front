@@ -12,18 +12,21 @@
               <input formControlName="originalUrl" name="originalUrl" type="text" class="form-control form-control-lg" placeholder="Enter your url...">
             </div>
             <div class="col-12 col-md-3">
-              <button type="submit" class="btn btn-block btn-lg btn-primary">Let's go!</button>
+              <button type="submit" class="btn btn-block btn-lg btn-primary" (click)="submit()">Let's go!</button>
             </div>
           </div>
         </form>
+        <div class="alert alert-danger mt-2" role="alert" *ngIf="error">
+          {{errorMessage}}
+        </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="newUrl">
       <div class="col-md-10 col-lg-8 mx-auto">
-        <div class="bg-dark mt-4 mb-4 p-2">
+        <div class="bg-dark mt-4 p-2">
           <h4 class="m-0">
             <a href="" class="text-light">
-              localhost:5000/1asd5
+              {{newShortenedUrl.shortenedUrl}}
             </a>
           </h4>
         </div>
@@ -31,26 +34,12 @@
     </div>
     <div class="row">
       <div class="col-md-10 col-lg-8 mx-auto">
-        <div class="bg-light mb-4 text">
+        <div class="bg-light mt-4 mb-4 text url-list">
           <ul class="list-group">
-            <li class="list-group-item">
+            <li class="list-group-item" *ngFor="let item of lastUrls">
               <h5 class="m-0">
-                <a href="">
-                  localhost:5000/1asd5
-                </a>
-              </h5>
-            </li>
-            <li class="list-group-item">
-              <h5 class="m-0">
-                <a href="">
-                  localhost:5000/84nsd
-                </a>
-              </h5>
-            </li>
-            <li class="list-group-item">
-              <h5 class="m-0">
-                <a href="">
-                  localhost:5000/6ave5
+                <a href="javascript:void(0);" (click)="goToLink(item.originalUrl)">
+                  {{item.shortenedUrl}}
                 </a>
               </h5>
             </li>

@@ -30,3 +30,8 @@
     font-size: 3rem;
   }
 }
+
+.url-list{
+  max-height: 300px;
+  overflow-y: scroll;
+}
