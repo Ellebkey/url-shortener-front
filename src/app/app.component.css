@@ -1,0 +1,32 @@
+.main-form {
+  position: relative;
+  background: url("../assets/bg-pattern.png"), #7b4397;
+  background: url("../assets/bg-pattern.png"), -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
+  background: url("../assets/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.main-form .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.main-form h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .main-form {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  .main-form h1 {
+    font-size: 3rem;
+  }
+}
