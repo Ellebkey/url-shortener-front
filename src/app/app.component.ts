@@ -37,6 +37,7 @@ export class AppComponent implements OnInit {
 
   submit() {
     this.newUrl = false;
+    this.error = false;
     const urlToSend = this.submitForm.value;
     urlToSend.host = window.location.href;
 
