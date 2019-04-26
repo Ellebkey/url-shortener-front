@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
         this.loadData();
       },
       error => {
-        this.errorMessage = error.message;
+        this.errorMessage = error.error.message;
         this.error = true;
       }
     );
@@ -61,6 +61,18 @@ export class AppComponent implements OnInit {
     this.urlService.updateVisit(shortenedUrl).subscribe(
       (data: any) => {
         this.loadData();
+      }
+    );
+  }
+
+  createSeed() {
+    this.urlService.createSeed({ host:  window.location.href }).subscribe(
+      (data: any) => {
+        this.loadData();
+      },
+      error => {
+        this.errorMessage = error.error.message;
+        this.error = true;
       }
     );
   }

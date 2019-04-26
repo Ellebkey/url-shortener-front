@@ -19,6 +19,9 @@
         <div class="alert alert-danger mt-2" role="alert" *ngIf="error">
           {{errorMessage}}
         </div>
+        <button class="btn btn-block mt-4 btn-lg btn-info" (click)="createSeed()" *ngIf="lastUrls.length < 1">
+          Create examples
+        </button>
       </div>
     </div>
     <div class="row" *ngIf="newUrl">
@@ -33,14 +36,14 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-10 col-lg-8 mx-auto">
-        <div class="bg-light mt-4 mb-4 text">
-          <h3 class="text-left text-info pt-3 pl-3">Top 100 most frequently</h3>
+      <div class="col-md-10 col-lg-8 mx-auto" *ngIf="lastUrls.length > 0">
+        <div class="bg-light mt-4 mb-4 text text-left">
+          <h3 class="text-info pt-3 pl-3">Top 100 most frequently</h3>
           <ul class="list-group url-list">
             <li class="list-group-item" *ngFor="let item of lastUrls">
               <h5 class="m-0">
                 <a href="javascript:void(0);" (click)="goToLink(item)">
-                  {{item.shortenedUrl}}
+                  {{item.shortenedUrl}} - <span class="text-body">{{item.title}}</span>
                 </a>
               </h5>
             </li>

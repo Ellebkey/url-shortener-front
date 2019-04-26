@@ -15,11 +15,14 @@ export class UrlsService {
   updateVisit(URL: {
     shortId: string;
   }) {
-    console.log(URL.shortId);
     return this.http.put(`${this.url}/urls/${URL.shortId}`, URL);
   }
 
   create(URL: {}) {
     return this.http.post(`${this.url}/urls`, URL);
+  }
+
+  createSeed(body: {}) {
+    return this.http.post(`${this.url}/urls/seed`, body);
   }
 }
