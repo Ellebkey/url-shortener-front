@@ -34,11 +34,12 @@
     </div>
     <div class="row">
       <div class="col-md-10 col-lg-8 mx-auto">
-        <div class="bg-light mt-4 mb-4 text url-list">
-          <ul class="list-group">
+        <div class="bg-light mt-4 mb-4 text">
+          <h3 class="text-left text-info pt-3 pl-3">Top 100 most frequently</h3>
+          <ul class="list-group url-list">
             <li class="list-group-item" *ngFor="let item of lastUrls">
               <h5 class="m-0">
-                <a href="javascript:void(0);" (click)="goToLink(item.originalUrl)">
+                <a href="javascript:void(0);" (click)="goToLink(item)">
                   {{item.shortenedUrl}}
                 </a>
               </h5>

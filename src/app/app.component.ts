@@ -37,7 +37,10 @@ export class AppComponent implements OnInit {
 
   submit() {
     this.newUrl = false;
-    this.urlService.create(this.submitForm.value).subscribe(
+    const urlToSend = this.submitForm.value;
+    urlToSend.host = window.location.href;
+
+    this.urlService.create(urlToSend).subscribe(
       (data: any) => {
         this.newShortenedUrl = data;
         this.newUrl = true;
@@ -50,10 +53,15 @@ export class AppComponent implements OnInit {
     );
   }
 
-  goToLink(link) {
+  goToLink(shortenedUrl) {
     window.open(
-      link,
+      shortenedUrl.originalUrl,
       '_blank'
+    );
+    this.urlService.updateVisit(shortenedUrl).subscribe(
+      (data: any) => {
+        this.loadData();
+      }
     );
   }
 
