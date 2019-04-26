@@ -1,27 +1,40 @@
-# UrlShortenerFront
+# URL Shortener Fronted
 
+## Overview
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone the repo:
+```sh
+git clone https://github.com/Ellebkey/url-shortener-front.git
+cd url-shortener-front
+```
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve` for a dev server. Navigate to `http://localhost:2002/`. The app will automatically reload if you change any of the source files.
 
-## Build
+Note: Remeber to run the backend [app](https://github.com/Ellebkey/url-shortener-back) first.
+
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Instructions
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##### This app will generate a shorter version given an url.
+- Live version [shortener](http://shortener.joelbarranco.io/) 
+- On the input write the url that you want to be shortener.
+- Click the button to generate the new url.
+- The new shortened url version is going to be shown below the input.
+- A list of shortened urls will be shown at the bottom ordered by visit.
+- Each click on this list will generate a new visit on the link.
+- NOTE: If there are not shorted urls generated, it will appear a "Create examples" button.
 
-## Running end-to-end tests
+## License
+This project is licensed under the [MIT License](https://github.com/Ellebkey/node-express-mongoose/blob/master/LICENSE)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Meta
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Joel Barranco – [@Ellebkey](https://twitter.com/ellebkey) – hello@joelbarranco.io
